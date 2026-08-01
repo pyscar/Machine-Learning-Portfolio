@@ -473,33 +473,84 @@ Evaluation metrics include:
 Using multiple evaluation metrics provides a more complete understanding of model effectiveness than relying solely on overall accuracy.
 
 ---
+# 📈 Model Training & Performance Evaluation
 
-# 📈 Training Monitoring
+During model development, the training process of each deep learning architecture was continuously monitored to evaluate learning behaviour, convergence, and potential overfitting.
 
-During model development, training progress was continuously monitored to evaluate learning behaviour and detect potential overfitting.
+The project compares the performance of three deep learning models:
 
-The following visualizations were generated throughout training:
+- Artificial Neural Network (ANN)
+- One-Dimensional Convolutional Neural Network (CNN)
+- Hybrid CNN–LSTM Network
+
+For each model, both training and validation metrics were recorded throughout the learning process.
+
+The following visualizations were generated during model evaluation:
 
 - Training Accuracy
 - Validation Accuracy
 - Training Loss
 - Validation Loss
-- ROC Curve
-- Confusion Matrix
+- Receiver Operating Characteristic (ROC) Curve
+- Model Performance Comparison
 
-Example placeholders:
+These visualizations provide valuable insight into model convergence, generalization capability, and classification performance across the integrated multi-domain cybersecurity dataset.
+
+---
+
+## 📊 Training Performance
+
+### Artificial Neural Network (ANN)
 
 <p align="center">
-<img src="images/training_accuracy.png" width="48%">
-<img src="images/training_loss.png" width="48%">
-</p>
-
-<p align="center">
-<img src="images/confusion_matrix.png" width="48%">
-<img src="images/roc_curve.png" width="48%">
+<img src="images/ann_training.png" width="90%">
 </p>
 
 ---
+
+### One-Dimensional Convolutional Neural Network (CNN)
+
+<p align="center">
+<img src="images/cnn_training.png" width="90%">
+</p>
+
+---
+
+### Hybrid CNN–LSTM Network
+
+<p align="center">
+<img src="images/cnn_lstm_training.png" width="90%">
+</p>
+
+---
+
+## 📈 ROC Curve Analysis
+
+Receiver Operating Characteristic (ROC) curves were generated to evaluate the discrimination capability of each model.
+
+The Area Under the Curve (AUC) demonstrates the ability of each model to distinguish between normal and malicious network traffic.
+
+<p align="center">
+<img src="images/roc_ann.png" width="60%">
+</p>
+
+<p align="center">
+<img src="images/roc_cnn.png" width="60%">
+</p>
+
+<p align="center">
+<img src="images/roc_cnn_lstm.png" width="60%">
+</p>
+
+---
+
+## 🏆 Model Performance Comparison
+
+The final models were evaluated using Accuracy, Precision, Recall, F1-Score, and ROC-AUC to compare their effectiveness in intrusion detection.
+
+<p align="center">
+<img src="images/model_performance.png" width="70%">
+</p>
 
 # 💾 Model Persistence
 
@@ -531,94 +582,102 @@ The trained model can be loaded and used to classify previously unseen network t
 ---
 # 📊 Results & Discussion
 
-The developed deep learning models were evaluated using multiple classification metrics to assess their effectiveness in detecting malicious network traffic across the integrated cybersecurity datasets.
+The proposed multi-domain intrusion detection framework successfully integrated cybersecurity datasets from enterprise networks, healthcare systems, Internet of Things (IoT) environments, and connected vehicle networks into a unified machine learning pipeline.
 
-Rather than relying on a single performance indicator, this project evaluates model behaviour using Accuracy, Precision, Recall, F1-Score, ROC-AUC, and Confusion Matrix analysis to provide a comprehensive assessment.
+Comprehensive exploratory data analysis confirmed balanced class distributions, domain diversity, and meaningful feature relationships prior to model development.
 
-> **Note:** Replace the placeholder values below with the actual metrics obtained from your notebook.
+Three deep learning architectures were trained and evaluated:
 
-| Model | Accuracy | Precision | Recall | F1-Score |
-|--------|----------|-----------|--------|----------|
-| CNN | XX.XX% | XX.XX% | XX.XX% | XX.XX% |
-| Hybrid CNN–LSTM | XX.XX% | XX.XX% | XX.XX% | XX.XX% |
+- Artificial Neural Network (ANN)
+- One-Dimensional Convolutional Neural Network (CNN)
+- Hybrid CNN–LSTM Network
+
+Performance was assessed using multiple evaluation metrics, including Accuracy, Precision, Recall, F1-Score, and ROC-AUC.
+
+Overall, the models achieved consistently high classification performance, with ROC-AUC values exceeding **97%**, demonstrating strong capability in distinguishing normal network traffic from intrusion attempts.
+
+The comparative analysis shows that all three architectures produced competitive results, while the ensemble strategy further explored opportunities to improve prediction robustness and model reliability across multiple cybersecurity domains.
 
 ---
 
-# 📷 Project Gallery
+# 📊 Exploratory Data Analysis & Dataset Insights
 
-The repository includes several visualizations generated during experimentation.
+Before training the deep learning models, an extensive exploratory data analysis (EDA) was conducted to understand the characteristics of the integrated cybersecurity dataset. This process verified data quality, examined class balance, analyzed feature relationships, and confirmed the suitability of the merged dataset for intrusion detection.
 
-## Class Distribution
+---
 
-The merged dataset contains a well-balanced distribution of normal and intrusion traffic.
+## 1. Class Distribution
 
-Maintaining class balance is important because it prevents the deep learning models from becoming biased toward one class, leading to more reliable intrusion detection performance.
+The merged dataset contains a balanced distribution of **normal** and **intrusion** traffic samples. Maintaining class balance is essential for reducing prediction bias and enabling the models to learn both classes effectively.
 
 <p align="center">
 <img src="images/class_distribution.png" width="70%">
 </p>
 
-## Distribution Across Data Sources
+---
 
-This visualization illustrates the contribution of each cybersecurity dataset after integration.
+## 2. Distribution Across Data Sources
 
-The merged dataset combines enterprise networks, healthcare systems, IoT environments, and connected vehicle traffic into a unified learning framework.
+The integrated dataset combines four cybersecurity domains, providing diverse network traffic from different operational environments.
+
+- **CAN Bus** – Connected vehicle networks
+- **NSL-KDD** – Enterprise network traffic
+- **Healthcare IoT** – Medical device communication
+- **General IoT** – Internet of Things devices
+
+This diversity improves the robustness and generalization capability of the intrusion detection models.
 
 <p align="center">
 <img src="images/data_sources_distribution.png" width="80%">
 </p>
 
-## Label Distribution by Domain
+---
 
-The figure illustrates how normal and intrusion samples are distributed across each cybersecurity domain.
+## 3. Label Distribution by Domain
 
-This confirms that the integrated dataset contains attack samples from multiple real-world environments rather than relying on a single benchmark dataset.
+This visualization illustrates the distribution of **normal** and **intrusion** samples within each cybersecurity domain.
+
+The analysis confirms that attack samples are represented across all integrated datasets, ensuring the models learn intrusion patterns from multiple environments instead of relying on a single benchmark.
 
 <p align="center">
 <img src="images/domain_label_distribution.png" width="85%">
 </p>
 
-## Top Features Correlated with Intrusion
+---
 
-Feature correlation analysis was performed to identify the variables that contribute most strongly to intrusion detection.
+## 4. Feature Importance Analysis
 
-Understanding feature importance provides valuable insights into the characteristics of malicious network traffic.
+Feature correlation analysis was performed to identify the network attributes most strongly associated with malicious traffic.
+
+Understanding feature importance provides valuable insight into the behavioural patterns that distinguish intrusion attempts from legitimate network activity.
 
 <p align="center">
 <img src="images/top_features.png" width="85%">
 </p>
 
-## Correlation Heatmap
+---
 
-A correlation heatmap was generated to visualize relationships among the most significant network features.
+## 5. Correlation Analysis
 
-The analysis helps identify highly correlated variables and provides additional insight into the structure of the integrated cybersecurity dataset.
+A correlation heatmap was generated to visualize relationships among the most significant network features after preprocessing and feature engineering.
+
+This analysis highlights feature dependencies and helps identify redundant or highly correlated variables that may influence model performance.
 
 <p align="center">
 <img src="images/correlation_heatmap.png" width="90%">
 </p>
 
-<p align="center">
+---
 
-<img src="images/training_accuracy.png" width="45%">
+# 🧠 Deep Learning Model Training
 
-<img src="images/training_loss.png" width="45%">
+Three deep learning architectures were developed and trained to evaluate their effectiveness in detecting network intrusions.
 
-</p>
+- Artificial Neural Network (ANN)
+- One-Dimensional Convolutional Neural Network (CNN)
+- Hybrid CNN–LSTM Network
 
-<p align="center">
-
-<img src="images/confusion_matrix.png" width="45%">
-
-<img src="images/roc_curve.png" width="45%">
-
-</p>
-
-<p align="center">
-
-<img src="images/model_comparison.png" width="70%">
-
-</p>
+Training and validation accuracy, together with loss curves, were monitored throughout the learning process to assess convergence, stability, and generalization performance.
 
 ---
 
