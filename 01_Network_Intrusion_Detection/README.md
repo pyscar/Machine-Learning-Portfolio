@@ -498,24 +498,31 @@ These visualizations provide valuable insight into model convergence, generaliza
 
 ---
 
-## 📊 Training Performance
+# 🧠 Deep Learning Models
 
-### Artificial Neural Network (ANN)
-
-<p align="center">
-<img src="images/ann_training.png" width="90%">
-</p>
+Three deep learning architectures were developed and evaluated to investigate their effectiveness in detecting network intrusions across the integrated multi-domain cybersecurity dataset.
 
 ---
 
-### One-Dimensional Convolutional Neural Network (CNN)
+## 1. Artificial Neural Network (ANN)
 
-<p align="center">
-<img src="images/cnn_training.png" width="90%">
-</p>
+The ANN served as the baseline model for binary intrusion detection. It learns nonlinear relationships between network traffic features through fully connected layers and provides a benchmark for comparing more advanced architectures.
 
 ---
 
+## 2. One-Dimensional Convolutional Neural Network (CNN)
+
+The CNN automatically extracts local feature patterns from network traffic using one-dimensional convolutional layers, improving feature representation while reducing manual feature engineering.
+
+---
+
+## 3. Hybrid CNN–LSTM Network
+
+The Hybrid CNN–LSTM combines convolutional feature extraction with sequential learning, enabling the model to capture both spatial and temporal characteristics of network traffic.
+
+---
+
+The performance of all three models was evaluated using Accuracy, Precision, Recall, F1-Score, ROC-AUC, and comparative analysis.
 ### Hybrid CNN–LSTM Network
 
 <p align="center">
