@@ -1,6 +1,6 @@
 # Hi there, I'm Oscar Kiamba 👋
 
-# Artificial Intelligence | Machine Learning | Deep Learning | Computer Vision
+## Artificial Intelligence | Machine Learning | Deep Learning | Computer Vision
 
 Welcome to my Machine Learning Portfolio!
 
