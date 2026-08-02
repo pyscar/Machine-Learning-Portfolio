@@ -250,7 +250,7 @@ The classifier is evaluated using:
 Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/02_Text_Classification_NLP.git
+git clone https://github.com/pyscar/02_Text_Classification_NLP.git
 ```
 
 Navigate into the project
