@@ -1,47 +1,64 @@
+<p align="center">
+    <img src="images/cover.png" width="100%" alt="Text Classification using Machine Learning">
+</p>
+
 # 📝 Text Classification using Machine Learning (NLP)
 
-> An end-to-end Natural Language Processing (NLP) project that classifies tweet sentiments using traditional Machine Learning techniques. This project demonstrates the complete NLP pipeline, from text preprocessing and feature engineering to model training, evaluation, and prediction.
+![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange?style=for-the-badge&logo=scikitlearn)
+![NLP](https://img.shields.io/badge/NLP-Text%20Classification-success?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
+> An end-to-end Natural Language Processing (NLP) project that classifies airline tweets into **Positive**, **Neutral**, and **Negative** sentiments using **TF-IDF Vectorization** and **Logistic Regression**.
 
 ---
 
-## 📌 Project Overview
+# 📌 Project Overview
 
-Text classification is one of the most common Natural Language Processing (NLP) tasks, with applications including sentiment analysis, spam detection, fake news detection, customer feedback analysis, and social media monitoring.
+Sentiment analysis is one of the most widely used Natural Language Processing (NLP) applications, helping organizations understand customer opinions from textual data.
 
-In this project, tweets are analyzed and classified according to their sentiment using machine learning algorithms. The workflow includes data preprocessing, text vectorization, model training, evaluation, and prediction.
+In this project, tweets directed at major U.S. airlines are analyzed and classified according to customer sentiment. The project demonstrates a complete NLP pipeline, including text preprocessing, feature engineering, machine learning model training, evaluation, and prediction.
 
 ---
 
-## 🎯 Objectives
+# 🎯 Objectives
 
-- Perform Exploratory Data Analysis (EDA) on text data
-- Clean and preprocess raw tweets
-- Convert text into numerical features
-- Train multiple Machine Learning classification models
-- Compare model performance
-- Evaluate results using confusion matrices and classification metrics
+- Perform Exploratory Data Analysis (EDA)
+- Analyze airline tweet sentiments
+- Clean and preprocess text data
+- Convert text into TF-IDF features
+- Train a Logistic Regression classifier
+- Evaluate model performance
 - Build a reusable sentiment prediction pipeline
 
 ---
 
-## 📂 Dataset
+# 📂 Dataset
 
-The dataset contains tweets labeled according to their sentiment.
+This project uses the **Twitter US Airline Sentiment** dataset.
 
-Typical columns include:
+The dataset contains customer tweets directed at major U.S. airlines and includes sentiment labels.
 
-- Tweet/Text
-- Sentiment Label
+### Dataset Features
 
-The dataset is located in:
+- Tweet ID
+- Airline
+- Tweet Text
+- Airline Sentiment
+- Sentiment Confidence
+- Negative Reason
+- Tweet Timestamp
+- User Location
+
+Dataset location:
 
 ```
-dataset/
+dataset/airline-tweets.csv
 ```
 
 ---
 
-## 🛠 Technologies Used
+# 🛠 Technologies Used
 
 - Python
 - Jupyter Notebook
@@ -50,176 +67,211 @@ dataset/
 - Matplotlib
 - Scikit-learn
 - NLTK
+- WordCloud
 - Regular Expressions (re)
 
 ---
 
-## 📚 NLP Workflow
-
-The project follows a standard Natural Language Processing pipeline:
+# 📚 NLP Pipeline
 
 ```
 Raw Tweets
       │
       ▼
-Data Cleaning
-      │
-      ▼
-Text Preprocessing
-(Remove URLs, Punctuation,
-Stopwords, Lowercasing)
+Text Cleaning
       │
       ▼
 Tokenization
       │
       ▼
-Feature Extraction
-(TF-IDF / Count Vectorization)
+Stopword Removal
       │
       ▼
-Machine Learning Models
+TF-IDF Vectorization
+      │
+      ▼
+Logistic Regression
+      │
+      ▼
+Prediction
       │
       ▼
 Evaluation
-      │
-      ▼
-Sentiment Prediction
 ```
 
 ---
 
-## 📊 Exploratory Data Analysis
+# 📊 Exploratory Data Analysis
 
-The notebook includes exploratory analysis such as:
+### Sentiment Distribution
 
-- Dataset overview
-- Missing value inspection
-- Class distribution
-- Text statistics
-- Feature exploration
-
-Example visualizations are stored inside:
-
-```
-images/
-```
+<p align="center">
+<img src="images/class_distribution.png" width="700">
+</p>
 
 ---
 
-## ⚙️ Text Preprocessing
+### Tweet Length Distribution
 
-The preprocessing pipeline includes:
-
-- Lowercase conversion
-- Removing punctuation
-- Removing URLs
-- Removing special characters
-- Removing numbers
-- Tokenization
-- Stopword removal
-- Text normalization
-
-These steps improve model performance by reducing noise within the dataset.
+<p align="center">
+<img src="images/tweet_length_distribution.png" width="700">
+</p>
 
 ---
 
-## 🤖 Machine Learning Models
+### Airline Distribution
 
-Multiple classification algorithms are trained and compared to determine the best-performing model.
+<p align="center">
+<img src="images/airline_distribution.png" width="700">
+</p>
 
-The notebook evaluates the models using:
+---
+
+# ☁️ Word Clouds
+
+### Positive Tweets
+
+<p align="center">
+<img src="images/wordcloud_positive.png" width="700">
+</p>
+
+---
+
+### Negative Tweets
+
+<p align="center">
+<img src="images/wordcloud_negative.png" width="700">
+</p>
+
+---
+
+# 🤖 Machine Learning Model
+
+The project uses:
+
+- TF-IDF Vectorization
+- Logistic Regression Classifier
+
+The trained model predicts whether an airline tweet expresses:
+
+- 😊 Positive sentiment
+- 😐 Neutral sentiment
+- 😞 Negative sentiment
+
+---
+
+# 📈 Model Evaluation
+
+The classifier is evaluated using:
 
 - Accuracy
 - Precision
 - Recall
 - F1-Score
 - Confusion Matrix
-
----
-
-## 📈 Model Evaluation
-
-Performance is assessed using several evaluation metrics, including:
-
 - Classification Report
-- Accuracy Score
-- Confusion Matrix
-- Model Comparison
 
-Example evaluation figures are saved in the `images/` directory.
+### Confusion Matrix
 
----
-
-## 🔮 Sample Prediction
-
-Example workflow:
-
-```
-Input Tweet
-      │
-      ▼
-Preprocessing
-      │
-      ▼
-Vectorization
-      │
-      ▼
-Trained Model
-      │
-      ▼
-Predicted Sentiment
-```
+<p align="center">
+<img src="images/confusion_matrix.png" width="600">
+</p>
 
 ---
 
-## 📁 Project Structure
+### Classification Report
+
+<p align="center">
+<img src="images/classification_report.png" width="700">
+</p>
+
+---
+
+### Model Accuracy
+
+<p align="center">
+<img src="images/model_accuracy.png" width="500">
+</p>
+
+---
+
+# 🔮 Sample Prediction
+
+<p align="center">
+<img src="images/prediction_example.png" width="800">
+</p>
+
+---
+
+# 🏆 Key Results
+
+- Successfully classified airline tweets into three sentiment classes.
+- Applied TF-IDF vectorization for numerical feature extraction.
+- Trained a Logistic Regression classifier.
+- Evaluated the model using multiple classification metrics.
+- Built a complete NLP sentiment analysis pipeline.
+
+---
+
+# 📁 Project Structure
 
 ```
 02_Text_Classification_NLP/
 │
 ├── dataset/
+│   └── airline-tweets.csv
 │
 ├── images/
+│   ├── cover.png
+│   ├── airline_distribution.png
 │   ├── class_distribution.png
+│   ├── tweet_length_distribution.png
+│   ├── sentiment_pie_chart.png
+│   ├── sentiment_confidence.png
+│   ├── top_words.png
+│   ├── wordcloud_positive.png
+│   ├── wordcloud_negative.png
 │   ├── confusion_matrix.png
-│   ├── model_comparison.png
+│   ├── classification_report.png
 │   ├── prediction_example.png
+│   └── model_accuracy.png
 │
 ├── Text_Classification.ipynb
 ├── README.md
 ├── requirements.txt
-└── LICENSE
+├── LICENSE
+└── report.md
 ```
 
 ---
 
-## 🚀 Installation
+# 🚀 Installation
 
-Clone the repository:
+Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/02_Text_Classification_NLP.git
+git clone https://github.com/YOUR_USERNAME/02_Text_Classification_NLP.git
 ```
 
-Navigate to the project directory:
+Navigate into the project
 
 ```bash
 cd 02_Text_Classification_NLP
 ```
 
-Install the required packages:
+Install dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Launch Jupyter Notebook:
+Launch Jupyter Notebook
 
 ```bash
 jupyter notebook
 ```
 
-Open:
+Open
 
 ```
 Text_Classification.ipynb
@@ -227,53 +279,31 @@ Text_Classification.ipynb
 
 ---
 
-## 📦 Requirements
+# 📌 Applications
 
-Major libraries used include:
+This project demonstrates techniques used in:
 
-- pandas
-- numpy
-- matplotlib
-- scikit-learn
-- nltk
-- notebook
-
-Install all dependencies with:
-
-```bash
-pip install -r requirements.txt
-```
-
----
-
-## 📌 Applications
-
-This project demonstrates techniques applicable to:
-
-- Social Media Analytics
-- Customer Feedback Analysis
-- Product Review Classification
-- Brand Monitoring
-- Opinion Mining
 - Sentiment Analysis
-- NLP Research
+- Customer Feedback Analytics
+- Social Media Monitoring
+- Brand Reputation Analysis
+- Opinion Mining
+- Natural Language Processing
 
 ---
 
-## 📈 Future Improvements
+# 📈 Future Improvements
 
-Potential enhancements include:
-
-- Hyperparameter tuning
-- Word embeddings (Word2Vec, GloVe, FastText)
-- Deep Learning models (LSTM, GRU)
-- Transformer-based models (BERT, RoBERTa)
-- Model deployment using Flask or FastAPI
-- Interactive web interface using Streamlit
+- Compare multiple machine learning algorithms.
+- Hyperparameter optimization.
+- Word2Vec and GloVe embeddings.
+- Fine-tune transformer models such as BERT.
+- Deploy the model using Streamlit.
+- Build a REST API using FastAPI.
 
 ---
 
-## 👨‍💻 Author
+# 👨‍💻 Author
 
 **Oscar Kiamba**
 
@@ -281,10 +311,10 @@ Computer Science | Machine Learning | Data Science | Natural Language Processing
 
 ---
 
-## 📄 License
+# 📄 License
 
 This project is licensed under the MIT License.
 
 ---
 
-⭐ If you found this project helpful, consider giving the repository a star!
+⭐ If you found this project useful, consider giving the repository a star.
