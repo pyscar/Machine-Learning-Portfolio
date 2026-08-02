@@ -1,45 +1,65 @@
-![Project Cover](images/cover.png)
-
 # Camouflage Object Detection in Low-Light using Deep Learning
 
-![Python](https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-Deep%20Learning-orange?style=for-the-badge&logo=tensorflow)
-![Keras](https://img.shields.io/badge/Keras-Neural%20Network-red?style=for-the-badge&logo=keras)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+<p align="center">
+  <img src="images/cover.png" width="100%">
+</p>
+
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.10-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red)
+![Computer Vision](https://img.shields.io/badge/Computer%20Vision-OpenCV-green)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
+</p>
+
 ---
 
 # Project Overview
 
-This project presents a deep learning framework for detecting camouflaged animals under **extreme low-light UAV surveillance environments**. The proposed system combines environmental luminance standardization, adaptive image enhancement, transfer learning with ResNet-50, attention-based localization, and feature drift analysis to improve object recognition in visually challenging conditions.
+This project presents a complete deep learning framework for detecting **camouflaged animals under extreme low-light UAV surveillance environments**.
 
-Beyond image classification, the project investigates how environmental degradation affects learned feature representations and demonstrates how adaptive enhancement can recover discriminative visual information.
+Unlike traditional image classification projects, this work investigates how severe environmental degradation affects learned visual representations and proposes an adaptive enhancement framework capable of recovering discriminative features before classification.
 
-The complete pipeline includes low-light simulation, feature extraction, Grad-CAM visualization, automated object localization, Saliency Energy Ratio (SER) analysis, dimensionality reduction, and comprehensive model evaluation.
+The proposed pipeline integrates:
+
+- Environmental luminance standardization
+- UAV low-light simulation
+- Adaptive image enhancement
+- Transfer learning with ResNet-50
+- Grad-CAM attention visualization
+- Automated object localization
+- Feature drift analysis
+- Saliency Energy Ratio (SER)
+- Statistical evaluation
+- Model performance analysis
+
+The project demonstrates that adaptive enhancement substantially improves feature localization and classification performance under highly degraded imaging conditions.
 
 ---
 
 # Objectives
 
-- Simulate realistic UAV night-time surveillance conditions
+- Simulate realistic UAV night surveillance conditions
 - Standardize environmental luminance
-- Enhance degraded low-light imagery
-- Train a ResNet-50 classifier using transfer learning
-- Generate attention heatmaps using Grad-CAM
+- Recover hidden image information
+- Train a deep transfer learning model
+- Generate Grad-CAM attention maps
 - Perform automated object localization
-- Analyze feature drift using MDS
-- Quantify localization quality using Saliency Energy Ratio (SER)
-- Evaluate classification performance using multiple metrics
+- Analyze feature drift using dimensionality reduction
+- Measure localization quality using Saliency Energy Ratio (SER)
+- Evaluate model performance using standard classification metrics
 
 ---
 
 # Dataset
 
-Two image datasets were used throughout the study.
+The study uses two datasets.
 
 - Clear Animal Images
 - Camouflaged Animal Images
 
-The dataset contains **15 animal categories**:
+The dataset contains **15 animal categories**.
 
 - Bear
 - Bird
@@ -61,9 +81,9 @@ The dataset contains **15 animal categories**:
 
 # Methodology
 
-The proposed framework follows the pipeline below.
+The complete research framework follows the pipeline below.
 
-```
+```text
 Dataset
       │
       ▼
@@ -79,13 +99,13 @@ Adaptive Image Enhancement
 Transfer Learning (ResNet-50)
       │
       ▼
-Attention Heatmaps (Grad-CAM)
+Grad-CAM Attention Maps
       │
       ▼
 Automated Object Localization
       │
       ▼
-Feature Drift Analysis (MDS)
+Feature Drift Analysis (PCA + MDS)
       │
       ▼
 Saliency Energy Ratio (SER)
@@ -98,92 +118,215 @@ Performance Evaluation
 
 # Deep Learning Model
 
-## Backbone Network
+## Backbone
 
-- ResNet-50 (Pre-trained on ImageNet)
+- ResNet-50
+- ImageNet Pre-trained
 
 ## Framework
 
 - PyTorch
 - TorchVision
 
-## Loss Function
+## Transfer Learning
 
-- CrossEntropyLoss
-
-## Optimizer
-
-- Adam
-
-## Learning Rate
-
-- 1e-4
-
-## Fine-Tuning Strategy
-
-- Replace final fully connected layer
+- Replace final classification layer
 - Fine-tune Layer4
-- Transfer Learning
+- Adam Optimizer
+
+## Hyperparameters
+
+| Parameter | Value |
+|-----------|-------|
+| Optimizer | Adam |
+| Learning Rate | 1e-4 |
+| Loss Function | CrossEntropyLoss |
+| Backbone | ResNet-50 |
 
 ---
 
-# Model Performance
+# Final Model Performance
 
-After fine-tuning the ResNet-50 model, the proposed framework achieved the following performance on the validation dataset.
+After fine-tuning the ResNet-50 backbone, the proposed framework achieved the following validation performance.
 
 | Metric | Score |
-|---------|-------:|
+|---------|---------|
 | **Validation Accuracy** | **74.17%** |
 | **Precision** | **75.37%** |
 | **Recall** | **74.17%** |
 | **F1 Score** | **73.08%** |
 
-These results demonstrate that adaptive enhancement combined with transfer learning substantially improves camouflage recognition under simulated low-light conditions.
+These results demonstrate that adaptive enhancement combined with transfer learning significantly improves camouflage recognition under simulated UAV night-time environments.
 
 ---
 
 # Experimental Analysis
 
-The notebook includes comprehensive experimental evaluation:
+The notebook includes comprehensive experimental evaluation.
 
-- Training Loss
-- Validation Loss
-- Training Accuracy
-- Validation Accuracy
-- Classification Report
-- Confusion Matrix
-- Precision
-- Recall
-- F1 Score
-- Grad-CAM Attention Maps
+- Environmental Standardization
+- Low-Light Simulation
+- Adaptive Enhancement
+- Grad-CAM Visualization
 - Automated Object Localization
-- Feature Drift Analysis (MDS)
+- Feature Drift Analysis
+- PCA Projection
+- MDS Visualization
+- Confidence Recovery
 - Saliency Energy Ratio (SER)
 - SER Recovery Analysis
+- Statistical Regression
 - Ablation Study
+- Classification Report
+- Confusion Matrix
+- Training Curves
+- Validation Curves
 
 ---
 
 # Generated Visualizations
 
-| Figure | Description |
-|----------|-------------|
-| cover.png | Project cover illustration |
-| luminance_standardization.png | Environmental standardization |
-| sample_comparison.png | Daylight vs Low-Light comparison |
-| enhancement_pipeline.png | Adaptive enhancement pipeline |
-| attention_maps.png | Baseline vs Proposed Grad-CAM |
-| object_detection.png | Automated localization |
-| mds_feature_drift.png | Feature displacement visualization |
-| feature_drift_table.png | Drift statistics |
-| drift_regression.png | Feature Drift vs Confidence Regression |
-| focus_recovery_bar.png | SER recovery analysis |
-| ser_summary.png | Spatial localization gain |
-| confusion_matrix.png | Classification performance |
-| training_loss.png | Training loss |
-| validation_loss.png | Validation loss |
-| training_accuracy.png | Training accuracy |
-| validation_accuracy.png | Validation accuracy |
+## Project Cover
+
+<p align="center">
+<img src="images/cover.png" width="900">
+</p>
+
+---
+
+## Environmental Standardization
+
+<p align="center">
+<img src="images/global_luminance_standardization.png" width="900">
+</p>
+
+---
+
+## Daylight vs Simulated UAV Environment
+
+<p align="center">
+<img src="images/daylight_vs_uav_simulation.png" width="900">
+</p>
+
+---
+
+## Baseline vs Proposed Attention Maps
+
+<p align="center">
+<img src="images/proposed_vs_baseline_attention.png" width="900">
+</p>
+
+---
+
+## Automated Object Detection
+
+<p align="center">
+<img src="images/object_detection_result.png" width="900">
+</p>
+
+---
+
+## PCA Feature Drift
+
+<p align="center">
+<img src="images/pca_feature_drift.png" width="850">
+</p>
+
+---
+
+## MDS Feature Displacement
+
+<p align="center">
+<img src="images/mds_feature_displacement.png" width="850">
+</p>
+
+---
+
+## Feature Drift Statistics
+
+<p align="center">
+<img src="images/feature_space_drift_statistics.png" width="850">
+</p>
+
+---
+
+## Confidence Recovery
+
+<p align="center">
+<img src="images/confidence_recovery_bar_chart.png" width="850">
+</p>
+
+---
+
+## Feature Drift Regression
+
+<p align="center">
+<img src="images/r2_generalization_curve.png" width="850">
+</p>
+
+---
+
+## Saliency Energy Ratio (SER)
+
+<p align="center">
+<img src="images/ser_comparison.png" width="850">
+</p>
+
+---
+
+## Spatial Localization Gain
+
+<p align="center">
+<img src="images/spatial_localization_gain.png" width="850">
+</p>
+
+---
+
+## SER Recovery Gain
+
+<p align="center">
+<img src="images/ser_recovery_gain.png" width="850">
+</p>
+
+---
+
+## Ablation Study
+
+<p align="center">
+<img src="images/ablation_study.png" width="900">
+</p>
+
+---
+
+## Classification Report
+
+<p align="center">
+<img src="images/classification_report.png" width="900">
+</p>
+
+---
+
+## Confusion Matrix
+
+<p align="center">
+<img src="images/confusion_matrix.png" width="700">
+</p>
+
+---
+
+## Accuracy Curve
+
+<p align="center">
+<img src="images/accuracy_curve.png" width="700">
+</p>
+
+---
+
+## Loss Curve
+
+<p align="center">
+<img src="images/loss_curve.png" width="700">
+</p>
 
 ---
 
@@ -198,25 +341,25 @@ The notebook includes comprehensive experimental evaluation:
 - Matplotlib
 - Scikit-Learn
 - SciPy
-- PIL
+- Pillow
 
 ---
 
 # Installation
 
-Clone the repository.
+Clone the complete Machine Learning Portfolio.
 
 ```bash
-git clone https://github.com//04_Camouflage_Object_Detection.git
+git clone https://github.com/pyscar/Machine-Learning-Portfolio.git
 ```
 
-Navigate into the project.
+Navigate to this project.
 
 ```bash
-cd 04_Camouflage_Object_Detection
+cd Machine-Learning-Portfolio/04_Camouflage_Object_Detection
 ```
 
-Install the required packages.
+Install dependencies.
 
 ```bash
 pip install -r requirements.txt
@@ -232,9 +375,9 @@ Launch Jupyter Notebook.
 jupyter notebook
 ```
 
-Open:
+Open
 
-```
+```text
 Camouflage_Object_Detection.ipynb
 ```
 
@@ -244,13 +387,13 @@ Run all notebook cells sequentially to reproduce the complete experimental pipel
 
 # Repository Structure
 
-```
+```text
 04_Camouflage_Object_Detection/
 
 ├── Camouflage_Object_Detection.ipynb
 ├── README.md
-├── requirements.txt
 ├── LICENSE
+├── requirements.txt
 │
 ├── dataset/
 │   └── README.md
@@ -260,21 +403,23 @@ Run all notebook cells sequentially to reproduce the complete experimental pipel
 │
 ├── images/
 │   ├── cover.png
-│   ├── luminance_standardization.png
-│   ├── sample_comparison.png
-│   ├── enhancement_pipeline.png
-│   ├── attention_maps.png
-│   ├── object_detection.png
-│   ├── mds_feature_drift.png
-│   ├── feature_drift_table.png
-│   ├── drift_regression.png
-│   ├── focus_recovery_bar.png
-│   ├── ser_summary.png
+│   ├── global_luminance_standardization.png
+│   ├── daylight_vs_uav_simulation.png
+│   ├── proposed_vs_baseline_attention.png
+│   ├── object_detection_result.png
+│   ├── pca_feature_drift.png
+│   ├── mds_feature_displacement.png
+│   ├── feature_space_drift_statistics.png
+│   ├── confidence_recovery_bar_chart.png
+│   ├── r2_generalization_curve.png
+│   ├── ser_comparison.png
+│   ├── spatial_localization_gain.png
+│   ├── ser_recovery_gain.png
+│   ├── ablation_study.png
+│   ├── classification_report.png
 │   ├── confusion_matrix.png
-│   ├── training_loss.png
-│   ├── validation_loss.png
-│   ├── training_accuracy.png
-│   └── validation_accuracy.png
+│   ├── accuracy_curve.png
+│   └── loss_curve.png
 │
 └── models/
 ```
@@ -286,11 +431,11 @@ Run all notebook cells sequentially to reproduce the complete experimental pipel
 - Vision Transformers (ViT)
 - Swin Transformer
 - ConvNeXt
-- YOLOv11 Object Detection
+- YOLOv11 Detection
 - Semantic Segmentation
-- Thermal–RGB Image Fusion
-- Real-time UAV Video Processing
-- Edge AI Deployment on Embedded Devices
+- Thermal-RGB Fusion
+- Real-Time UAV Video Processing
+- Edge AI Deployment
 
 ---
 
@@ -305,8 +450,9 @@ This project is licensed under the **MIT License**.
 - PyTorch
 - TorchVision
 - OpenCV
-- Scikit-Learn
 - NumPy
+- SciPy
+- Scikit-Learn
 - Scientific Python Community
 
 ---
@@ -316,3 +462,9 @@ This project is licensed under the **MIT License**.
 **Oscar Kiamba**
 
 Artificial Intelligence • Machine Learning • Computer Vision
+
+GitHub: https://github.com/pyscar
+
+---
+
+⭐ If you found this project useful, consider starring the repository.
