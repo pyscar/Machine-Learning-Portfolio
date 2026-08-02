@@ -1,46 +1,72 @@
 # Hi there, I'm Oscar Kiamba 👋
 
-## Artificial Intelligence | Machine Learning | Data Science | Computer Vision
+# Artificial Intelligence | Machine Learning | Deep Learning | Computer Vision
 
-Welcome to my GitHub portfolio.
+Welcome to my Machine Learning Portfolio!
 
-I'm passionate about developing intelligent systems using Machine Learning, Deep Learning, Computer Vision, and Data Science. My projects focus on solving practical problems through data-driven approaches while following research-oriented methodologies.
+This repository showcases my journey in Artificial Intelligence, Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Cybersecurity, and Optimization Algorithms. Each project follows an end-to-end machine learning workflow—from data preprocessing and exploratory analysis to model development, evaluation, visualization, and comprehensive documentation.
 
 ---
 
-## About Me
+# About Me
 
 - 🎓 Computer Science Graduate
-- 🤖 AI & Machine Learning Enthusiast
+- 🤖 Artificial Intelligence & Machine Learning Engineer
 - 💻 Python Developer
-- 📊 Data Science & Analytics
-- 👁️ Computer Vision
-- 📚 Continuously learning new AI technologies
+- 📊 Data Scientist
+- 👁️ Computer Vision Enthusiast
+- 📚 Passionate about Research-Oriented AI
+- 🚀 Building practical AI solutions for real-world problems
 
 ---
 
-## Technical Skills
+# Technical Skills
 
-### Programming Languages
+## Programming
 
 - Python
 - SQL
 
-### Machine Learning
+## Machine Learning
 
 - Scikit-Learn
 - PyTorch
-- TensorFlow (Learning)
+- TensorFlow
+- Feature Engineering
+- Model Evaluation
 
-### Computer Vision
+## Deep Learning
+
+- Artificial Neural Networks
+- Convolutional Neural Networks
+- Transfer Learning
+- ResNet-50
+- Fine-Tuning
+
+## Computer Vision
 
 - OpenCV
 - TorchVision
 - Image Processing
-- Transfer Learning
 - Grad-CAM
+- Object Localization
+- Image Enhancement
 
-### Data Science
+## Natural Language Processing
+
+- Text Classification
+- TF-IDF
+- Count Vectorization
+- Naive Bayes
+- Logistic Regression
+
+## Optimization
+
+- Particle Swarm Optimization (PSO)
+- Feature Selection
+- Random Forest Optimization
+
+## Data Science
 
 - Pandas
 - NumPy
@@ -48,12 +74,7 @@ I'm passionate about developing intelligent systems using Machine Learning, Deep
 - Seaborn
 - SciPy
 
-### Optimization
-
-- Particle Swarm Optimization (PSO)
-- Feature Selection
-
-### Tools
+## Tools
 
 - Git
 - GitHub
@@ -65,22 +86,101 @@ I'm passionate about developing intelligent systems using Machine Learning, Deep
 
 # Featured Projects
 
-## 1. Camouflage Object Detection in Low-Light using Deep Learning
+---
 
-Deep learning framework for UAV-based camouflage object detection under extreme low-light conditions.
+## 1. Network Intrusion Detection
+
+Machine learning framework for detecting malicious network traffic using supervised learning algorithms.
+
+### Highlights
+
+- Data preprocessing
+- Exploratory Data Analysis
+- Feature Engineering
+- Classification Models
+- Model Evaluation
+- Confusion Matrix
+- ROC Curve
+- Performance Metrics
+
+📂 Repository
+
+```
+01_Network_Intrusion_Detection
+```
+
+---
+
+## 2. Text Classification using Natural Language Processing
+
+A Natural Language Processing project for classifying text documents using traditional machine learning techniques.
+
+### Highlights
+
+- Text Cleaning
+- Tokenization
+- TF-IDF Vectorization
+- Count Vectorization
+- Naive Bayes
+- Logistic Regression
+- Model Comparison
+- Classification Report
+
+📂 Repository
+
+```
+02_Text_Classification_NLP
+```
+
+---
+
+## 3. Handwritten Digit Recognition using Artificial Neural Networks
+
+Deep learning model for handwritten digit recognition using the MNIST dataset.
+
+### Highlights
+
+- Artificial Neural Networks
+- TensorFlow / Keras
+- MNIST Dataset
+- Training Curves
+- Accuracy Evaluation
+- Confusion Matrix
+- Performance Analysis
+
+📂 Repository
+
+```
+03_ANN_MNIST
+```
+
+---
+
+## 4. Camouflage Object Detection in Low-Light using Deep Learning
+
+Research-oriented computer vision framework for UAV-based camouflage object detection under extreme low-light environments.
 
 ### Highlights
 
 - ResNet-50 Transfer Learning
 - Adaptive Image Enhancement
-- Low-Light Simulation
-- Grad-CAM Visualization
+- Environmental Standardization
+- UAV Low-Light Simulation
+- Grad-CAM Attention Maps
 - Automated Object Localization
 - Feature Drift Analysis
 - Saliency Energy Ratio (SER)
-- Model Performance Evaluation
+- Ablation Study
+- Comprehensive Performance Evaluation
 
-Repository:
+### Model Performance
+
+- Validation Accuracy: **74.17%**
+- Precision: **75.37%**
+- Recall: **74.17%**
+- F1 Score: **73.08%**
+
+📂 Repository
 
 ```
 04_Camouflage_Object_Detection
@@ -88,7 +188,7 @@ Repository:
 
 ---
 
-## 2. Particle Swarm Optimization for Breast Cancer Diagnosis
+## 5. Particle Swarm Optimization for Breast Cancer Diagnosis
 
 Machine learning framework for breast cancer diagnosis using Particle Swarm Optimization for feature selection and Random Forest classification.
 
@@ -97,13 +197,15 @@ Machine learning framework for breast cancer diagnosis using Particle Swarm Opti
 - Particle Swarm Optimization
 - Feature Selection
 - Random Forest
-- ROC Analysis
-- Confusion Matrix
+- PCA Visualization
 - Feature Importance
 - Learning Curves
-- PCA Visualization
+- ROC Curve
+- Precision-Recall Curve
+- Confusion Matrix
+- Performance Comparison
 
-Repository:
+📂 Repository
 
 ```
 05_Particle_Swarm_Optimization
@@ -111,59 +213,118 @@ Repository:
 
 ---
 
-## Current Learning
+# Current Learning
+
+I'm continuously expanding my expertise in modern Artificial Intelligence.
+
+Currently learning:
 
 - Vision Transformers (ViT)
 - Large Language Models (LLMs)
 - Retrieval-Augmented Generation (RAG)
 - AI Agents
 - LangChain
+- LangGraph
+- Hugging Face Transformers
 - MLOps
+- Docker
+- Kubernetes
 - Cloud AI
+- Model Deployment
 
 ---
 
-## Connect with Me
+# Repository Structure
 
-GitHub
+```
+Machine-Learning-Portfolio/
 
-https://github.com/pyscar
+│
 
-LinkedIn
+├── 01_Network_Intrusion_Detection/
 
-https://www.linkedin.com/in/oscar-kiamba/
+├── 02_Text_Classification_NLP/
 
-Portfolio
+├── 03_ANN_MNIST/
 
-https://oscarkiamba.vercel.app/
+├── 04_Camouflage_Object_Detection/
 
-Email
+├── 05_Particle_Swarm_Optimization/
 
-oscarmunyao59@gmail.com
+├── assets/
+
+├── LICENSE
+
+└── README.md
+```
 
 ---
 
-## Portfolio Goals
+# Portfolio Goals
 
-This repository showcases projects in:
+This portfolio demonstrates practical applications of:
 
 - Artificial Intelligence
 - Machine Learning
 - Deep Learning
 - Computer Vision
+- Natural Language Processing
 - Data Science
 - Optimization Algorithms
 - Research-Oriented AI
 
 Each project contains:
 
-- Complete source code
+- Complete Source Code
+- Jupyter Notebooks
 - Documentation
+- Research-style Reports
+- Performance Evaluation
 - Visualizations
-- Experimental analysis
-- Requirements
-- Reproducible notebooks
+- Reproducible Experiments
+- Requirements Files
 
 ---
 
-⭐ Feel free to explore the repositories and connect with me!
+# Connect With Me
+
+### GitHub
+
+https://github.com/pyscar
+
+### Portfolio Website
+
+https://oscarkiamba.vercel.app/
+
+### LinkedIn
+
+https://www.linkedin.com/in/oscar-kiamba/
+
+### Email
+
+oscarmunyao59@gmail.com
+
+---
+
+# Future Projects
+
+Upcoming additions to this portfolio include:
+
+- Convolutional Neural Networks (CNN)
+- Vision Transformers (ViT)
+- Object Detection (YOLO)
+- Semantic Segmentation
+- Time Series Forecasting
+- Recommendation Systems
+- Reinforcement Learning
+- Explainable AI (XAI)
+- Generative AI
+- Retrieval-Augmented Generation (RAG)
+- AI Agents
+- MLOps Projects
+
+---
+
+⭐ **Thank you for visiting my Machine Learning Portfolio!**
+
+If you find these projects helpful or interesting, feel free to ⭐ the repository and connect with me on LinkedIn.

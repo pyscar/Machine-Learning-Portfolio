@@ -186,12 +186,6 @@ The notebook includes comprehensive experimental evaluation.
 
 # Generated Visualizations
 
-## Project Cover
-
-<p align="center">
-<img src="images/cover.png" width="900">
-</p>
-
 ---
 
 ## Environmental Standardization
